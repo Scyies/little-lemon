@@ -1,20 +1,11 @@
 import { Button } from './Components/Button';
-import Logo from './assets/icons_assets/Logo.svg';
 import HeroImg from './assets/icons_assets/restauranfood.jpg';
 import GreekSalad from './assets/icons_assets/greek salad.jpg';
 import Bruchetta from './assets/icons_assets/bruchetta.svg';
 import LemonDessert from './assets/icons_assets/lemon dessert.jpg';
+import { Header } from './Components/Header';
 
 function App() {
-  const nav = [
-    'Home',
-    'About',
-    'Menu',
-    'Reservations',
-    'Order Online',
-    'Login',
-  ];
-
   const specials = [
     {
       img: GreekSalad,
@@ -38,27 +29,16 @@ function App() {
 
   return (
     <>
-      <header className='flex justify-between p-12 gap-8 items-center max-w-5xl m-auto'>
-        <img src={Logo} alt='' />
-        <nav className=''>
-          <ul className='flex gap-8 font-karla'>
-            {nav.map((name, i) => (
-              <li className='font-bold text-lg' key={i}>
-                {name}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <section className='bg-primary_1 max-h-[450px]'>
         <div className='max-w-5xl m-auto p-12 flex gap-8'>
           <div className='flex flex-col gap-5 w-[50%]'>
-            <div>
+            <>
               <h1 className='font-markazi text-primary_2 text-6xl'>
                 Little Lemon
               </h1>
               <p className='font-markazi text-lg text-white'>Chicago</p>
-            </div>
+            </>
             <p className='font-karla text-lg text-white font-medium mt-4'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
               esse aspernatur nihil mollitia est tempore, exercitationem
