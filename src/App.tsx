@@ -4,6 +4,7 @@ import GreekSalad from './assets/icons_assets/greek salad.jpg';
 import Bruchetta from './assets/icons_assets/bruchetta.svg';
 import LemonDessert from './assets/icons_assets/lemon dessert.jpg';
 import { Header } from './Components/Header';
+import { Link } from 'react-router-dom';
 
 function App() {
   const specials = [
@@ -29,7 +30,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <section className='bg-primary_1 max-h-[450px]'>
         <div className='max-w-5xl m-auto p-12 flex gap-8'>
           <div className='flex flex-col gap-5 w-[50%]'>
@@ -45,7 +45,9 @@ function App() {
               veritatis iure ut! In nihil iste architecto aut aspernatur
               necessitatibus aliquam sunt amet explicabo!
             </p>
-            <Button>Reserve a table</Button>
+            <Link to='/reservations'>
+              <Button>Reserve a table</Button>
+            </Link>
           </div>
           <img
             src={HeroImg}

@@ -15,6 +15,7 @@ export default {
         highlight_1: '#edefee',
         highlight_2: '#333333',
       },
+      backgroundImage: {},
     },
   },
   plugins: [],

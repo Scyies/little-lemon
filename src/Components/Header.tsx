@@ -1,27 +1,32 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Logo from '../assets/icons_assets/Logo.svg';
 
 export function Header() {
   const nav = [
-    'Home',
-    'About',
-    'Menu',
-    'Reservations',
-    'Order Online',
-    'Login',
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Menu', link: '/menu' },
+    { name: 'Reservations', link: '/reservations' },
+    { name: 'Order Online', link: '/orderonline' },
+    { name: 'Login', link: '/login' },
   ];
   return (
-    <header className='flex justify-between p-12 gap-8 items-center max-w-5xl m-auto'>
-      <img src={Logo} alt='' />
-      <nav className=''>
-        <ul className='flex gap-8 font-karla'>
-          {nav.map((name, i) => (
-            <li className='font-bold text-lg text-highlight_2' key={i}>
-              <Link to={`/${name.toLowerCase()}`}>{name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <>
+      <header className='flex justify-between p-12 gap-8 items-center max-w-5xl m-auto'>
+        <Link to='/'>
+          <img src={Logo} alt='' />
+        </Link>
+        <nav className=''>
+          <ul className='flex gap-8 font-karla'>
+            {nav.map((link, i) => (
+              <li className='font-bold text-lg text-highlight_2' key={i}>
+                <Link to={link.link}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <Outlet />
+    </>
   );
 }
